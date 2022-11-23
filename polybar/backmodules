@@ -1,0 +1,281 @@
+
+[module/telegram]
+type = custom/text
+content = "%{T4} %{T-}"
+content-foreground = ${colors.cyan}
+content-padding = 1
+content-font = 4
+click-left = "~/.config/polybar/scripts/telegram.sh"
+
+
+[module/discord]
+type = custom/text
+content = "%{T4} %{T-}"
+content-foreground = ${colors.cyan}
+content-padding = 1
+content-font = 4
+click-left = "~/.config/polybar/scripts/discord.sh"
+
+
+[module/codeforces]
+type = custom/text
+content = "%{T4} %{T-}"
+content-foreground = ${colors.cyan}
+content-background = ${colors.background}
+
+
+content-padding = 1
+content-font = 1
+click-left = "~/.config/polybar/scripts/codeforces.sh"
+
+[module/youtube]
+type = custom/text
+content = "%{T4} %{T-}"
+content-foreground = ${colors.cyan}
+content-padding = 1
+content-font = 4
+click-left = "~/.config/polybar/scripts/yt.sh"
+
+
+[module/cpu]
+type = internal/cpu
+interval = 1
+format = <label>
+format-prefix = "   " 
+label = "%{T2}%percentage%%%{T2}"
+
+[module/volume]
+type = internal/pulseaudio
+format = <label>
+label-volume = "  %{T2}%percentage%%%{T-}  "
+label-muted = " "
+label-muted-foreground = #607290
+
+
+
+
+
+
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+wrapping-scroll = false
+
+; Only show workspaces on the same output as the bar
+;pin-workspaces = true
+
+label-mode-padding = 2
+label-mode-foreground = ${colors.foreground}
+label-mode-background = ${colors.background}
+
+; focused = Active workspace on focused monitor
+label-focused = ""
+label-focused-padding = 1
+label-focused-font = 3
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = ""
+label-unfocused-padding = 1
+label-unfocused-font = 3
+
+; urgent = Workspace with urgency hint set
+label-urgent = ""
+label-urgent-foreground = ${colors.red}
+label-urgent-font = 3
+label-urgent-padding = 1
+
+
+;;enddddddd
+
+
+
+[module/app]
+type = custom/text
+content = "%{T2} %{T-}"
+content-background = ${colors.background}
+content-foreground = ${colors.altgreen}
+content-padding = 2
+content-font = 100
+
+click-left = def-dmenu
+;;end
+
+
+
+
+
+[module/date]
+type = custom/script
+exec =  ~/.config/polybar/scripts/date.sh
+interval = 1
+tail = true
+
+
+
+[module/spotify]
+type = custom/script
+exec = ~/.config/polybar/scripts/song.sh 2>/dev/null || echo "No player found"
+format = "<label>  "
+format-prefix = "%{T4}%{F#1DB954}    %{F-}%{T-}"
+interval = 1
+
+tail = true
+
+
+
+;;end
+
+[module/next]
+type = custom/text
+content = "%{T4} %{T-}"
+content-foreground = ${colors.cyan}
+content-padding = 2
+content-font = 2
+click-left = playerctl next &
+
+
+[module/prev]
+type = custom/text
+content = "%{T4}%{T-}"
+content-foreground = ${colors.cyan}
+content-padding = 2
+content-font = 2
+click-left = playerctl previous &
+
+[module/toggle]
+type = custom/script
+
+exec = ~/.config/polybar/scripts/toggle.sh
+interval = 0.2
+format = <label>
+format-foreground = ${colors.cyan}
+format-padding = 1
+label = %output%
+
+tail = true
+click-left = playerctl play-pause &
+
+
+
+[module/bd26]
+type = custom/script
+exec = echo "BD26"
+format-foreground = ${colors.active}
+
+[module/github]
+type = custom/text
+content = "%{T4} %{T-}"
+content-foreground = ${colors.cyan}
+content-padding = 1
+content-font = 4
+click-left = "~/.config/polybar/scripts/github.sh"
+
+[module/space]
+type = custom/text
+content = " "
+content-foreground = ${colors.cyan}
+content-padding = 1
+content-font = 4
+
+
+[module/ccpu]
+type = internal/cpu
+interval = 2
+format-prefix = " "
+format-padding = 0
+format-prefix-foreground = ${colors.background}
+format-foreground = ${colors.background}
+format-background = ${colors.green}
+label = "%{A1:terminal -e gtop &:}%percentage%% %{A}"
+
+
+[module/ctime]
+type = internal/date
+interval = 1
+format-margin = 0
+format-prefix = ""
+format-prefix-foreground = ${colors.background}
+time = "%I:%M %p"
+time-alt = "%A, %m/%d/%y"
+label = %time%
+label-foreground = ${colors.background}
+label-background = ${colors.blue}
+label-padding = 1
+
+
+[module/nvolume]
+type = internal/pulseaudio
+
+use-ui-max = false
+
+interval = 5
+
+format-volume = <ramp-volume><label-volume>
+
+format-muted = <label-muted>
+format-muted-prefix = " "
+format-muted-prefix-font = 2
+format-muted-prefix-foreground = ${colors.background}
+format-muted-prefix-background = ${colors.darkred}
+
+label-volume = "%percentage%% "
+label-muted = "Mute"
+
+label-volume-background = ${colors.darkred}
+label-muted-background = ${colors.darkred}
+
+label-volume-foreground = ${colors.background}
+label-muted-foreground = ${colors.background}
+
+ramp-volume-0 = " "
+ramp-volume-1 = " "
+ramp-volume-2 = " "
+ramp-volume-3 = " "
+ramp-volume-4 = " "
+ramp-volume-5 = " "
+ramp-volume-6 = " "
+ramp-volume-7 = " "
+ramp-volume-8 = " "
+ramp-volume-9 = " "
+ramp-volume-font = 2
+ramp-volume-foreground = ${colors.background}
+ramp-volume-background = ${colors.darkred}
+
+
+
+[module/memory]
+type = internal/memory
+interval = 1
+format = <label>
+format-prefix = " "
+format-prefix-foreground = ${colors.black}
+format-foreground = ${colors.black}
+format-background = ${colors.yellow}
+label = "%{A1:terminal -e htop &:} %gb_used% %{A}"
+
+[module/title]
+type = internal/xwindow
+
+format = <label>
+format-background = ${colors.background}
+format-foreground = ${colors.foreground}
+format-padding = 0
+label = %title%
+label-maxlen = 50
+label-empty = Empty
+#label-empty-foreground = #707880
+label-empty-background = #50ffffffffff
+
+
+
+
+
+[module/cava]
+type = custom/script
+tail = true
+exec = $HOME/.config/polybar/scripts/cava.sh
+format = <label>
+label-foreground = ${colors.foreground}
+format-font = 5
+label = %output%

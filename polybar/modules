@@ -1,0 +1,243 @@
+[module/date]
+type = internal/date
+interval = 1.0
+label =  %date%
+label-padding = 0
+label-background = ${color.bg}
+label-foreground = ${colors.cs}
+date =  %a %d/%m%
+
+ramp-date-0 = 
+
+[module/septime]
+type = custom/text
+content = .
+content-foreground = ${colors.background}
+content-padding = 0
+
+
+[module/time]
+type = internal/date
+interval = 1.0
+label =  %time%
+label-padding = 0
+time =  %I:%M
+label-foreground = ${colors.yellow}
+
+
+
+[module/ccpu]
+type = internal/cpu
+interval = 2
+format-prefix = " "
+format-padding = 0
+label = "%{A1:terminal -e gtop &:}%percentage%% %{A}"
+label-foreground = ${colors.magenta}
+
+
+
+[module/app]
+type = custom/text
+content = "%{T2} %{T-}"
+content-background = ${colors.background}
+content-foreground = ${colors.csgreen}
+content-padding = 1
+content-font = 100
+
+click-left = def-dmenu
+
+
+
+
+
+
+[module/nvolume]
+type = internal/pulseaudio
+
+use-ui-max = false
+
+interval = 5
+
+format-volume = <ramp-volume> <label-volume>
+
+format-muted = <label-muted>
+format-muted-prefix = " "
+format-muted-prefix-font = 2
+
+
+label-volume = "%percentage%% "
+label-muted = "Mute"
+
+
+label-volume-foreground = ${colors.cyan}
+label-muted-foreground = ${colors.cyan}
+label-volume-background = ${colors.background}
+label-muted-background = ${colors.background}
+format-muted-prefix-foreground = ${colors.cyan}
+
+
+ramp-volume-0 = ""
+ramp-volume-1 = ""
+ramp-volume-2 = ""
+ramp-volume-3 = ""
+ramp-volume-4 = ""
+ramp-volume-5 = ""
+ramp-volume-6 = ""
+ramp-volume-7 = ""
+ramp-volume-8 = ""
+ramp-volume-9 = ""
+ramp-volume-font = 2
+ramp-volume-foreground = ${colors.cyan}
+ramp-volume-background = ${colors.background}
+
+
+
+
+[module/memory]
+type = internal/memory
+interval = 1
+format = <label>
+format-prefix = ""
+label = "%{A1:terminal -e htop &:} %percentage_used%% %{A}"
+format-prefix-foreground = ${colors.magenta}
+label-foreground = ${colors.magenta}
+
+
+
+
+
+[module/title]
+type = internal/xwindow
+
+format = <label>
+format-background = ${colors.background}
+format-foreground = ${colors.cyan}
+format-padding = 0
+label = %title%
+label-maxlen = 50
+label-empty = Empty
+#label-empty-foreground = #707880
+label-empty-background = #50ffffffffff
+
+
+
+[module/cava]
+type = custom/script
+tail = true
+exec = $HOME/.config/polybar/scripts/cava.sh
+format = <label>
+label-foreground = ${colors.red}
+format-font = 5
+label = %output%
+
+
+
+[module/i3ws]
+type = internal/i3
+
+pin-workspaces = true
+strip-wsnumbers = true
+index-sort = true
+
+enable-click = true
+enable-scroll = true
+wrapping-scroll = false
+reverse-scroll = false
+
+fuzzy-match = true
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;漣
+format = <label-state><label-mode>
+;format-background = ${colors.altblack}
+
+label-mode = %mode%
+label-mode-padding = 1
+;label-mode-background = ${colors.altblack}
+label-mode-foreground = ${colors.yellow}
+
+label-focused = %icon%
+label-focused-foreground = ${colors.blue}
+;label-focused-background = ${colors.altblack}
+
+;label-unfocused = %index%
+label-unfocused = ""
+;label-unfocused =  ""
+label-unfocused-font = 12
+label-unfocused-foreground = ${colors.cyan}
+;label-unfocused-background = ${colors.altblack}
+
+label-visible = %icon%
+label-visible-foreground = ${colors.green}
+label-visible-background = ${colors.altblack}
+
+;label-urgent = %index%
+label-urgent = ""
+label-urgent-foreground = ${colors.red}
+;label-urgent-background = ${colors.altblack}
+
+label-focused-padding = 1
+label-unfocused-padding = 1
+label-visible-padding = 1
+label-urgent-padding = 1
+
+;label-separator = |
+;label-separator-padding = 0
+;label-separator-foreground = ${colors.yellow}
+;label-separator-background = ${color.altblack}
+ 
+ 
+ [module/pf]
+type = custom/text
+content = "%{T4}   %{T-}"
+content-foreground = ${colors.altcyan}
+content-padding = 1
+content-font = 4
+click-left = "~/.config/polybar/scripts/poweroff.sh"
+;click-left = "powermenu"
+
+
+
+
+[module/newp]
+type = custom/menu
+
+expand-right = false
+
+label-open = ""
+label-open-background = ${colors.background}
+label-open-foreground = ${colors.red}
+label-close = ""
+label-close-background = ${colors.background}
+label-close-foreground = ${colors.red}
+label-separator = "     "
+label-separator-background = ${colors.background}
+label-separator-foreground = ${colors.white}
+
+menu-0-0-background = ${colors.background}
+menu-0-0-foreground = ${colors.red}
+menu-0-1-background = ${colors.background}
+menu-0-1-foreground = ${colors.yellow}
+menu-0-2-background = ${colors.background}
+menu-0-2-foreground = ${colors.blue}
+
+menu-0-0 = "  "
+menu-0-0-exec = poweroff
+menu-0-1 = "  "
+menu-0-1-exec = reboot
+menu-0-2 = "  "
+menu-0-2-exec = awesome quit
+
+
+
+[module/weather]
+type = custom/script
+exec = "~/.config/polybar/scripts/we"
+interval = 699
+label-font = 3
+

@@ -1,0 +1,35 @@
+[colors]
+background = #10111C
+;background = #21242a
+;background = #1d1f28
+;background = #1b1927
+;background = #17100f
+;background =   #2d354a
+;background =   #15263f  
+foreground =  #f0f0ed
+black = #3B4252
+red = #BF616A
+green =    #2eb620 
+;yellow = #EBCB8B
+yellow = #FFE800
+blue =   #2d6dee 
+magenta = #B48EAD
+cyan =  #209fe3
+white = #E5E9F0
+altblack = #4C566A
+altred = #BF616A
+altgreen = #A3BE8C
+altyellow = #EBCB8B
+altblue = #81A1C1
+altmagenta = #B48EAD
+altcyan =  #ee0d0d 
+altwhite = #ECEFF4
+custom = #9966ff
+darkred = #de0f17
+orange = #e54631
+csgreen = #60c813
+csred = #ef2a2a
+cs = #b8e9bb
+border = #8f00ff
+
+

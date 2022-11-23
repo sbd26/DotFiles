@@ -1,0 +1,100 @@
+#
+# wm independent hotkeys
+#
+
+# reloads sxhkd configuration:
+super + Escape
+    pkill -USR1 -x sxhkd
+
+# Launch Terminal
+super + Return
+    xfce4-terminal
+    #terminal
+
+# Floating Alacritty Terminal
+super + shift + Return
+    terminal -f
+
+# Fullscreen Terminal
+# super + shift + t
+    # xfce4-terminal --fullscreen
+    #terminal -m
+
+# Toggle Conkeww
+# super + shift + e
+    # toggle-conkeww
+# j4 dmenu
+alt + F1
+    j4-dmenu
+
+# Launch Menus
+super + {x,n,s}
+    {powermenu,def-nmdmenu,def-ssdmenu}
+
+# Lock Screen
+ctrl + alt + l
+    lock
+
+# custom dmenu scripts
+# alt + {e,l}
+    # {edit-configs, quick-links}
+
+# Launch Applications
+# super + shift + {f,w,r,g,c,d,s,v}
+    # {nautilus,firefox,xfce4-terminal -x ranger,geany,code,discord,spotify,virtualbox}
+
+
+super + shift + {f,n,t,d,r,c,v,x,i}
+    {firefox,nautilus,telegram-desktop,discord,xfce4-terminal -x ranger,caprine,xfce4-terminal -x nvim,xournalppm, xfce4-terminal -x tmux}
+
+
+# Volume controls
+XF86Audio{RaiseVolume,LowerVolume,Mute}
+    volume{ --up, --down, --toggle}
+
+# Brightness controls
+XF86MonBrightness{Up,Down}
+    brightness{ --up, --down}
+
+# screenshot
+Print
+    flameshot gui
+    # takeshot --now
+
+# screenshot active window
+ctrl + Print
+    takeshot --win
+
+# screenshot selected area
+ctrl + shift + Print
+    takeshot --area
+
+#
+#
+# BSPWM HOTKEYS
+#
+#
+
+# quit/restart bspwm
+ctrl + shift + {q,r}
+    bspc {quit,wm -r}
+
+# close and kill
+super + c
+    bspc node -c
+
+# alternate between the tiled and monocle layout
+
+
+
+super + ctrl + {m,x,y,z}
+	bspc node -g {marked,locked,sticky,private}
+
+# Send the window to another edge of the screen
+super + {_,shift + }{Left,Down,Up,Right}
+    bspc node -{f,s} {west,south,north,east}
+
+# Change focus to next window, including floating window
+alt + {_,shift + }Tab
+    bspc node -f {next.local,prev.local}
+ 
