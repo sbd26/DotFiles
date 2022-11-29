@@ -150,14 +150,14 @@ bindsym $mod+8 workspace number $ws8
 
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $alt+1 move container to workspace number $ws1
+bindsym $alt+2 move container to workspace number $ws2
+bindsym $alt+3 move container to workspace number $ws3
+bindsym $alt+4 move container to workspace number $ws4
+bindsym $alt+5 move container to workspace number $ws5
+bindsym $alt+6 move container to workspace number $ws6
+bindsym $alt+7 move container to workspace number $ws7
+bindsym $alt+8 move container to workspace number $ws8
 
 
 
@@ -197,7 +197,7 @@ assign [class="Xfce4-terminal"] 2
 for_window [class="Xfce4-terminal"] focus
 assign [class="Org.gnome.Nautilus"] 3
 assign [class="qBittorrent"] 7
-assign [class="haruna"] 4
+assign [class="haruna"] 5
 assign [class="dolphin"] 4
 
 
@@ -233,7 +233,4 @@ bindsym ctrl+shift+l exec --no-startup-id i3lock -i ~/Pictures/wall/lock.png
 
 # exec_always --no-startup-id qbittorrent
 exec_always --no-startup-id "~/.config/i3/bin/autostart.sh"
-exec_always --no-startup-id "~/.config/i3/bin/mirrorlist.sh"
-exec_always --no-startup-id "~/.config/i3/xborder/xborders --config ~/.config/i3/xborder/a.json"
-exec_always --no-startup-id dynamicwall
 
