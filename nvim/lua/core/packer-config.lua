@@ -30,6 +30,15 @@ use 'folke/which-key.nvim'
 --toogle terminal
 use 'akinsho/toggleterm.nvim'
 
+
+
+
+
+--
+
+use 'tamton-aquib/zone.nvim'
+
+
 --autopairs
 use 'windwp/nvim-autopairs'
 
