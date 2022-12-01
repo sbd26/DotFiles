@@ -1,0 +1,115 @@
+{
+
+
+  "Normal": {
+  "prefix": "nbits",
+  "body": [
+    "/*            BD26          */",
+    "#include <bits/stdc++.h>",
+    "using namespace std;",
+    "",
+    "",
+    "",
+    "int main()",
+    "{",
+    "  ios_base::sync_with_stdio(false);",
+    "  cin.tie(NULL);",
+    "",
+    "",
+    "  $1",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "  return 0;",
+    "}",
+    "",
+    "",
+    ""
+  ],
+  "description": "Normal"
+},
+"vecint": {
+  "prefix": "vii",
+  "body": [
+    "vector <int> $1"
+  ],
+  "description": "vecint"
+},
+
+"veclong": {
+  "prefix": "vll",
+  "body": [
+    "vector <long long> $1"
+  ],
+  "description": "veclong"
+},
+"longlong": {
+  "prefix": "ll",
+  "body": [
+    "long long $1"
+  ],
+  "description": "longlong"
+},
+"begin": {
+  "prefix": "bgn",
+  "body": [
+    "begin()$1"
+  ],
+  "description": "begin"
+},
+"newline": {
+  "prefix": "nn",
+  "body": [
+    "\"\\n\""
+  ],
+  "description": "newline"
+},
+"while": {
+  "prefix": "wtt",
+  "body": [
+    "int tt;",
+    "cin >> tt;",
+    "while (tt--){",
+    "",
+    "  $1",
+    "  ",
+    "",
+    "",
+    "  }",
+    "",
+    ""
+  ],
+  "description": "while"
+},
+"ios": {
+  "prefix": "ios",
+  "body": [
+    "#include <iostream>",
+    "using namespace std;",
+    "",
+    "",
+    "int main()",
+    "{",
+    "  ios_base::sync_with_stdio(false);",
+    "  cin.tie(NULL);",
+    "",
+    "  $1",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "  return 0;",
+    "}",
+    ""
+  ],
+  "description": "ios"
+}
+
+
+
+
+}
