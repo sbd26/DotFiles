@@ -1,0 +1,36 @@
+MenuBar=Disabled
+
+[ContextMenu]
+ShowCopyMoveMenu=true
+
+[DetailsMode]
+IconSize=32
+UseSystemFont=false
+ViewFont=Sans Serif,12,-1,5,50,0,0,0,0,0
+
+[General]
+ShowFullPathInTitlebar=true
+Version=202
+ViewPropsTimestamp=2022,11,12,12,57,52.766
+
+[IconsMode]
+IconSize=48
+PreviewSize=112
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+
+[KPropertiesDialog]
+VGA1 Height 1366x768 VGA1=604
+VGA1 Width 1366x768 VGA1=489
+
+[MainWindow]
+MenuBar=Disabled
+ToolBarsMovable=Disabled
+
+[PreviewSettings]
+Plugins=appimagethumbnail,audiothumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,opendocumentthumbnail,svgthumbnail
+
+[Search]
+Location=Everywhere
