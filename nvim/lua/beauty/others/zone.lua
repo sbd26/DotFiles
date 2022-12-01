@@ -1,6 +1,6 @@
 require('zone').setup {
-    style = "dvd",
-    after = 10,          -- Idle timeout
+    style = "epilepsy",
+    after = 30,          -- Idle timeout
     -- More options to come later
 
     treadmill = {

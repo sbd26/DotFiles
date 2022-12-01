@@ -38,11 +38,11 @@ set.hidden = true
 set.mouse = "a"
 vim.o.backup = false
 -- vim.o.writebackup = false
--- set.guifont="FantasqueSansMono Nerd Font"
--- vim.g.neovide_cursor_vfx_mode = "railgun"
--- vim.g.neovide_refresh_rate = 60
--- vim.g.neovide_cursor_trail_size = 0.9
--- vim.g.neovide_cursor_animation_length=0.028
+set.guifont="FantasqueSansMono Nerd Font"
+vim.g.neovide_cursor_vfx_mode = "railgun"
+vim.g.neovide_refresh_rate = 60
+vim.g.neovide_cursor_trail_size = 0.9
+vim.g.neovide_cursor_animation_length=0.028
 
 
 -- set.neovide_refresh_rate=60

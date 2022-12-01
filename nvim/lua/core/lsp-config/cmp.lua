@@ -135,7 +135,7 @@ require('lspconfig')["tsserver"].setup({
   filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
 })
 
-local servers = {'cssls', 'html'}
+local servers = {'cssls', 'html','gopls'}
 local nvim_lsp = require('lspconfig')
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup{

@@ -31,9 +31,6 @@ use 'folke/which-key.nvim'
 use 'akinsho/toggleterm.nvim'
 
 
-
-
-
 --
 
 use 'tamton-aquib/zone.nvim'
