@@ -10,7 +10,7 @@ configuration{
     location: 0;
     disable-history: false;
     hide-scrollbar: true;
-    display-drun: " Apps ";
+    display-drun: "  Search ";
     /* display-run: " Run "; */
     /* display-window: "Window"; */
     sidebar-mode: true;
@@ -37,11 +37,12 @@ element-text, element-icon , mode-switcher {
 
 window {
     /* width:800px; */
-    height: 400px;
+    width:100%;
+    height: 100%;
     border: 0px;
     border-color: @fg-col;
     background-color: @bg-col;
-    border-radius: 15;
+    /* border-radius: 15; */
 }
 
 mainbox {
