@@ -6,7 +6,8 @@ local set = vim.opt
 vim.notify = require("notify")
 
 
-
+set.whichwrap:append "<>[]hl"
+set.fillchars = { eob = " " }
 set.expandtab = true
 set.smarttab = true
 set.shiftwidth = 2
@@ -16,6 +17,8 @@ set.hlsearch = true
 set.incsearch = true
 set.ignorecase = true
 set.smartcase = true
+set.smartindent = true
+set.ruler = false
 
 set.termguicolors = true
 set.showmode = false
@@ -43,7 +46,7 @@ vim.g.neovide_cursor_vfx_mode = "railgun"
 vim.g.neovide_refresh_rate = 60
 vim.g.neovide_cursor_trail_size = 0.9
 vim.g.neovide_cursor_animation_length=0.028
-
-
 -- set.neovide_refresh_rate=60
+
+set.shortmess:append "sI"
 
