@@ -12,8 +12,8 @@
 -- local packer_bootstrap = ensure_packer()
 
 return require('packer').startup({function()
-  use 'kyazdani42/nvim-web-devicons'
   use 'wbthomason/packer.nvim'
+  use 'kyazdani42/nvim-web-devicons'
   use 'kyazdani42/nvim-tree.lua'
   use 'nvim-lualine/lualine.nvim'
   use 'romgrk/barbar.nvim'
