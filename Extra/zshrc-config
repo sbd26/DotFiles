@@ -1,0 +1,95 @@
+# source ~/Git/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+# skip_global_compinit=1
+
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+if [ -d "$HOME/.bin" ] ;
+  then PATH="$HOME/.bin:$PATH"
+fi
+
+if [ -d "$HOME/.local/bin" ] ;
+  then PATH="$HOME/.local/bin:$PATH"
+fi
+
+autoload -U promptinit; promptinit
+autoload -U colors && colors
+export PWD=/home/$USER
+export OLDPWD=/home/$USER
+export BAT_THEME="Nord"
+
+export KEYTIMEOUT=1
+export ZSH=/usr/share/oh-my-zsh
+
+# Load Version control information
+autoload -Uz vcs_info
+precmd() { vcs_info }
+
+# Format the vcs_info_msg_0_ variable
+zstyle ':vcs_info:git:*' formats "%b"
+
+ZSH_THEME_GIT_PROMPT_PREFIX=""
+ZSH_THEME_GIT_PROMPT_SUFFIX=""
+ZSH_THEME_GIT_PROMPT_DIRTY=" ✘"
+ZSH_THEME_GIT_PROMPT_CLEAN=" ✔"
+ZSH_THEME_GIT_PROMPT_ADDED=" ✚"
+ZSH_THEME_GIT_PROMPT_MODIFIED=" ✹"
+ZSH_THEME_GIT_PROMPT_DELETED=" ✖"
+ZSH_THEME_GIT_PROMPT_RENAMED=" "
+ZSH_THEME_GIT_PROMPT_UNMERGED=" ═"
+ZSH_THEME_GIT_PROMPT_UNTRACKED=" ✭"
+
+setopt prompt_subst
+PROMPT="%F{011}%~ %F{060}%n@%m%F{010}"$'\n'" ❯ %f"
+RPROMPT='%F{060}${vcs_info_msg_0_}`git_prompt_status`'
+
+# ZSH_THEME=robbyrussell
+#ZSH_THEME_RANDOM_CANDIDATES=( "agnoster" "crunch" "fino-time" "funky" "jonathan" "junkfood" )
+
+
+# ZSH_THEME="powerlevel10k/powerlevel10k"
+
+
+source ~/.oh-my-zsh
+export EDITOR=/usr/bin/nvim
+export VISUAL=/usr/bin/nvim
+export _JAVA_AWT_WM_NONREPARENTING=1
+export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=lcd -Dswing.aatext=true"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
+HISTSIZE=50000
+SAVEHIST=50000
+HISTFILE=~/.zsh_history
+HIST_STAMPS="dd/mm/yyyy"
+# compinit
+_comp_options+=(globdots) # lets you tab complete hidden files by default
+
+plugins=(
+	git
+	npm
+	zsh-autosuggestions
+	vi-mode
+	zsh-syntax-highlighting
+  z
+  )
+source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+[[ -f ~/.zshrc-personal ]] && . ~/.zshrc-personal
+
+
+source ~/.oh-my-zsh/plugins/z/z.plugin.zsh
+
+
+#highlighting selection
+zstyle ':completion:*' menu select
+
+
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=60'
+eval "$(starship init zsh)"
+export TERM=xterm-256color
+
+
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
